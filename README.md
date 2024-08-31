@@ -1,0 +1,1 @@
+# It is a student Registration System in this system student can give the all information like student Name, Id, Contact Number and Address.This is totally a client base application we can store all data and also we give a delete and reste or edit button,by using this admin can easily edit and delete this data.
