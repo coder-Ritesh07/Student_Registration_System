@@ -30,7 +30,7 @@ function addStudentDetails(e) {
     alert("You can't add a number in the name field,Try Again");
     return;
   }
-  if(stucontact.value.length>10||stucontact.value===""){
+  if((stucontact.value.length>10||stucontact.value.length<10)||stucontact.value===""){
     alert("Contact number should be 10 digits and Fill the Field,Try Again");
     return;
   }
@@ -40,10 +40,6 @@ function addStudentDetails(e) {
   }
     if(stuname.value===""|| stuid.value===""|| stuclass.value===""|| stuemail.value===""||stucontact===""){
     alert("Please fill all the fields");
-    if(stucontact.value.length>10){
-      alert("Contact number should be 10 digits,Try Again");
-      return;
-    }
   }
   else{
     let studentDetails=JSON.parse(localStorage.getItem("studentDetails"))??[];
@@ -108,7 +104,7 @@ function editItems(idx){
       alert("You can't add a number in the name field,Edit Again");
       return;
     }
-    if(stucontact.value.length>10||stucontact.value===""){
+    if((stucontact.value.length>10||stucontact.value.length<10)||stucontact.value===""){
       alert("Contact number should be 10 digits and Fill the Field,Edit Again");
       return;
     }
