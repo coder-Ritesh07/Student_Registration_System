@@ -10,7 +10,7 @@ let btnparent=document.querySelector(".btn-section")
 let newdiv;
 
 
-// CLear All data once from the Webpage by using the clearbutton usign the splice method
+// CLear All data once from the Webpage by using the clearbutton
 clearbtn.addEventListener("click", function(){
   let userdata=JSON.parse(localStorage.getItem("studentDetails"))??[];
   userdata.splice(0)
@@ -71,7 +71,7 @@ function displayAllStudentDetails(){
 //call the  displayAllStudentDetails() method here
 displayAllStudentDetails();
 
-// Remove data by using the removeItem() method
+// Remove data by using the removeItem() method,by clicking the Delete symbol user can delete the particular data
 function removeItem(idx)
 {  
   let studata=JSON.parse(localStorage.getItem("studentDetails"))??[]; 
@@ -80,7 +80,7 @@ function removeItem(idx)
   location.reload();
 }
 
-// Edit All Data By using the editItems() method
+// Edit All Data By using the editItems() method,in this method when a user click the edit symbol one update button is craeted and whatever changes a user can do and just click the update button to update the data
 function editItems(idx){
   let userdata=JSON.parse(localStorage.getItem("studentDetails"))??[];
   stuname.value=userdata[idx].name;
