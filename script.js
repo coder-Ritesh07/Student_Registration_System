@@ -20,16 +20,20 @@ clearbtn.addEventListener("click", function(){
 
 // Add Student Details in Local Storage by click the Add Button 
 function addStudentDetails(e) {
-    if(!isNaN(stuname.value)){
-      alert("You can't add a number in the name field");
-      return;
-    }
-    if(stucontact.value.length>10){
-      alert("Contact number should be 10 digits");
-      return;
-    }
+  if(!isNaN(stuname.value)){
+    alert("You can't add a number in the name field,Try Again");
+    return;
+  }
+  if(stucontact.value.length>10||stucontact.value===""){
+    alert("Contact number should be 10 digits and Fill the Field,Try Again");
+    return;
+  }
     if(stuname.value===""|| stuid.value===""|| stuclass.value===""|| stuemail.value===""||stucontact===""){
     alert("Please fill all the fields");
+    if(stucontact.value.length>10){
+      alert("Contact number should be 10 digits,Try Again");
+      return;
+    }
   }
   else{
     let studentDetails=JSON.parse(localStorage.getItem("studentDetails"))??[];
@@ -85,36 +89,49 @@ function editItems(idx){
   stuemail.value=userdata[idx].email;
   stucontact.value=userdata[idx].contactNumber;
   addbtn.style.display="none"
-  let resetbtn=document.createElement("button")
-  resetbtn.innerText="Update";
-  resetbtn.classList.add("btn-style","reset-btn")
-  btnparent.appendChild(resetbtn);
-  resetbtn.addEventListener("click",(e)=>{
-    e.preventDefault();
-    for(let el in userdata[idx]){
-      if(el==="name")
-      {
-       console.log( userdata[idx].name=stuname.value);
-      }
-      if(el==="id")
-      {
-        console.log(userdata[idx].id=stuid.value);
-      }
-      if(el==="class")
-      {
-        console.log(userdata[idx].class=stuclass.value)
-      }
-      if(el==="email")
-      {
-       console.log( userdata[idx].email=stuemail.value)
-      }
-      if(el==="contactNumber")
-      {
-        console.log(userdata[idx].contactNumber=stucontact.value)
-      }
+  let updatebtn=document.createElement("button")
+  updatebtn.innerText="Update";
+  updatebtn.classList.add("btn-style","reset-btn")
+  btnparent.appendChild(updatebtn);
+  updatebtn.addEventListener("click",(e)=>{
+    if(!isNaN(stuname.value)){
+      alert("You can't add a number in the name field,Edit Again");
+      return;
     }
-    localStorage.setItem("studentDetails",JSON.stringify(userdata));
-    location.reload();
+    if(stucontact.value.length>10||stucontact.value===""){
+      alert("Contact number should be 10 digits and Fill the Field,Edit Again");
+      return;
+    }
+    if(stuname.value===""|| stuid.value===""|| stuclass.value===""|| stuemail.value===""||stucontact===""){
+      alert("Please fill all the fields");
+    }
+    else{
+      e.preventDefault();
+      for(let el in userdata[idx]){
+        if(el==="name")
+        {
+         console.log( userdata[idx].name=stuname.value);
+        }
+        if(el==="id")
+        {
+          console.log(userdata[idx].id=stuid.value);
+        }
+        if(el==="class")
+        {
+          console.log(userdata[idx].class=stuclass.value)
+        }
+        if(el==="email")
+        {
+         console.log( userdata[idx].email=stuemail.value)
+        }
+        if(el==="contactNumber")
+        {
+          console.log(userdata[idx].contactNumber=stucontact.value)
+        }
+      }
+      localStorage.setItem("studentDetails",JSON.stringify(userdata));
+      location.reload();
+    }
   })
 
 }
