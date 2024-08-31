@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration System</title>
+    <meta name="discription" content="It is a student Registration System in this system student can give the all information like student Name, Id, Contact Number and Address.This is totally a client base application we can store all data and also we give a delete and reste or edit button,by using this admin can easily edit and delete this data.">
+    <link rel="stylesheet" href="style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="heading">Student Registration System</h1>
+        </header>
+        <main class="main-container">
+            <!-- Student Infromation or Infromation Form -->
+            <section class="student-registration">
+                <form action="" method="post">
+                    <!-- Student name Section -->
+                    <section class="stu-name">
+                        <label for="name">Student Name:</label>
+                        <input type="text" id="name" placeholder="Enter Your Name" required>
+                    </section>
+                    <!-- Student Id Section -->
+                    <section class="stu-id">
+                        <label for="id">Student Id:</label>
+                        <input type="number" id="id" placeholder="Enter Your Id" required>
+                    </section>
+                    <!-- Student Class Section -->
+                    <section class="stu-class">
+                        <label for="class">Student Class:</label>
+                        <input type="number" id="class" placeholder="Enter Your Class" required>
+                    </section>
+                    <!-- Student Roll number Section -->
+                    <section class="stu-email">
+                        <label for="email">Student Email-Id:</label>
+                        <input type="email" id="email" placeholder="Enter Your E-mail " required>
+                    </section>
+                    <!-- Student Contact Number Section -->
+                    <section class="stu-contactNo">
+                        <label for="contactNo">Student Contact No:</label>
+                        <input type="number" id="contactNo" placeholder="Enter Your Contact Number" required>
+                    </section>
+                    <!--Add Button here  -->
+                    <section class="btn-section">
+                        <button class="btn-style" id="addbtn">Add</button>
+                    </section>
+                </form>
+            </section>
+            <!-- Student Registration List -->
+            <section class="student-registration-lists">
+                <div class="student-lists student-lists2">
+                    <span style="font-weight: 800;">Name</span>
+                    <span style="font-weight: 800;">Id</span>
+                    <span style="font-weight: 800;">Class</span>
+                    <span style="font-weight: 800;">E-mail</span>
+                    <span style="font-weight: 800;">Contact</span>
+                    <span><button class="clearall">Clear All</button></span>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
