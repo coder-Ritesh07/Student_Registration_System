@@ -10,6 +10,12 @@ let btnparent=document.querySelector(".btn-section")
 let newdiv;
 
 
+// It is a ValiddateEmail Cheker Method check the valid email id
+function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
 // CLear All data once from the Webpage by using the clearbutton
 clearbtn.addEventListener("click", function(){
   let userdata=JSON.parse(localStorage.getItem("studentDetails"))??[];
@@ -26,6 +32,10 @@ function addStudentDetails(e) {
   }
   if(stucontact.value.length>10||stucontact.value===""){
     alert("Contact number should be 10 digits and Fill the Field,Try Again");
+    return;
+  }
+  if(!validateEmail(stuemail.value)){
+    alert("Invalid Email,Try Again");
     return;
   }
     if(stuname.value===""|| stuid.value===""|| stuclass.value===""|| stuemail.value===""||stucontact===""){
@@ -100,6 +110,10 @@ function editItems(idx){
     }
     if(stucontact.value.length>10||stucontact.value===""){
       alert("Contact number should be 10 digits and Fill the Field,Edit Again");
+      return;
+    }
+    if(!validateEmail(stuemail.value)){
+      alert("Invalid Email,Try Again");
       return;
     }
     if(stuname.value===""|| stuid.value===""|| stuclass.value===""|| stuemail.value===""||stucontact===""){
